@@ -31,16 +31,6 @@ angular.module('mooey', ['ionic','ionic.service.core', 'mooey.controllers'])
     templateUrl: 'templates/menu.html',
     controller: 'AppCtrl'
   })
-
-  .state('app.mycampaigns', {
-    url: '/mycampaigns',
-    views: {
-      'menuContent': {
-        templateUrl: 'templates/mycampaigns.html'
-      }
-    }
-  })
-
     .state('app.home', {
       url: '/home',
       views: {
@@ -52,14 +42,25 @@ angular.module('mooey', ['ionic','ionic.service.core', 'mooey.controllers'])
     })
 
   .state('app.single', {
-    url: '/playlists/:playlistId',
+    url: '/home/:campaignId',
     views: {
       'menuContent': {
-        templateUrl: 'templates/playlist.html',
-        controller: 'PlaylistCtrl'
+        templateUrl: 'templates/campaign.html',
+        controller: 'CampaignCtrl'
+      }
+    }
+  })
+  
+  .state('app.mycampaigns', {
+    url: '/mycampaigns',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/mycampaigns.html'
       }
     }
   });
+
+
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/home');
 });

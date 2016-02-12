@@ -42,15 +42,13 @@ angular.module('mooey.controllers', [])
 })
 
 .controller('HomeCtrl', function($scope) {
-  $scope.playlists = [
-    { title: 'Reggae', id: 1 },
-    { title: 'Chill', id: 2 },
-    { title: 'Dubstep', id: 3 },
-    { title: 'Indie', id: 4 },
-    { title: 'Rap', id: 5 },
-    { title: 'Cowbell', id: 6 }
+  $scope.campaigns = [
+    { title: 'Cancer Research', id: 1 },
+    { title: 'Homelessness', id: 2 },
+    { title: 'Diabetes', id: 3 },
+    { title: 'Broken Bone', id: 4 }
   ];
 })
 
-.controller('PlaylistCtrl', function($scope, $stateParams) {
+.controller('CampaignCtrl', function($scope, $stateParams) {
 });
