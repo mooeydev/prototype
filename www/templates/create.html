@@ -1,0 +1,29 @@
+<ion-view hide-nav-bar="false"view-title="Create a Campaign">
+  <ion-content>
+  <ul class="input-list style-1 clearfix">
+    <li>
+    <label class="item item-input">
+  		<span class="input-label" >Name of Campaign</span>
+  		<input type="text" placeholder="Support Local Schools!" ng-model="campaign.name">
+		</label> 
+    </li>
+    <li>
+    	<label class="item item-input">
+  		<span class="input-label">Who is Campaign for?</span>
+  		<input type="text" placeholder="L.B. Landry High School" ng-model="campaign.target">
+			</label>     
+    </li>
+    <li>
+	    <label class="item item-input">
+	  		<span class="input-label">Financial Goal</span>
+	  		<input type="tel" value="$" placeholder="$25,000" ng-model="campaign.goal">
+			</label>  
+    </li>
+    <label class="item item-input">
+  		<span class="input-label">Description of Campaign</span>
+  		<input type="text" placeholder="Education is the future so I'm starting a campaign to..." ng-model="campaign.description">
+		</label>        
+  </ul>
+  <button ng-click="submit()"></button>
+  </ion-content>
+</ion-view>

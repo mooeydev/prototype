@@ -4,7 +4,7 @@
 // 'Mooey' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('mooey', ['ionic','ionic.service.core', 'mooey.controllers'])
+angular.module('mooey', ['ionic','ionic.service.core', 'mooey.controllers', 'mooey.services','ionic-native-transitions', 'firebase'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -31,6 +31,7 @@ angular.module('mooey', ['ionic','ionic.service.core', 'mooey.controllers'])
     templateUrl: 'templates/menu.html',
     controller: 'AppCtrl'
   })
+
     .state('app.home', {
       url: '/home',
       views: {
@@ -50,7 +51,7 @@ angular.module('mooey', ['ionic','ionic.service.core', 'mooey.controllers'])
       }
     }
   })
-  
+
   .state('app.mycampaigns', {
     url: '/mycampaigns',
     views: {
@@ -58,9 +59,28 @@ angular.module('mooey', ['ionic','ionic.service.core', 'mooey.controllers'])
         templateUrl: 'templates/mycampaigns.html'
       }
     }
+  })
+
+  .state('app.login', {
+    url: '/login',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/login.html'
+      }
+    }
+  })
+
+  .state('app.create', {
+    url: '/create',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/create.html',
+        controller: 'CreateCtrl'
+      }
+    }
   });
 
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/home');
+  $urlRouterProvider.otherwise('/app/login');
 });
